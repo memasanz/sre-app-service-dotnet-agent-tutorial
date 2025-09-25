@@ -13,6 +13,16 @@ This sample .NET app demonstrates Azure App Service deployment slots, error simu
 - **Error Simulation:** If you set the `INJECT_ERROR` app setting to `1`, clicking "Refresh" 6 times will trigger an HTTP 500 error.
 - **Slots:** Run in parallel (e.g., staging vs. production) to test error scenarios safely.
 
+## Health and Monitoring
+
+The application includes a lightweight health check endpoint for monitoring and availability testing:
+
+- **`GET /ok`** - Returns HTTP 200 with plain text body "OK"
+  - No authentication required
+  - Designed for Azure App Service Health Check configuration
+  - Suitable for external availability tests and load balancer health checks
+  - Minimal response time (<50ms) with zero external dependencies
+
 ## Files
 
 | File                          | Description                            |
