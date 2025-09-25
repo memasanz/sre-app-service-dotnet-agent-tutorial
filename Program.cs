@@ -5,6 +5,8 @@ using System;
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
+app.MapGet("/ok", () => "OK");
+
 app.MapGet("/", async context =>
 {
     context.Response.ContentType = "text/html; charset=utf-8";
